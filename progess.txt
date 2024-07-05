@@ -13,13 +13,27 @@ Completado:
 # crear el modelo (https://realpython.com/get-started-with-django-1/#define-a-model)
     * se agregan los modelos: Curso, Estudiante, Matricula, Instructor, Categoria, Sesion, Asistencia
     * se ejectuan comando makemigrations y migrate
-    * se agregan los modelos admin
+    * se agregan los modelos a admin
+# agregar datos de prueba a la base de datos
+    * se han agregado 3 cursos y 2 categorias
 
 
 ---------
 Pendiente:
 
-# Formularios:
-    * https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django
-# vistas:
+# modificar modelo de cursos para poder subir imagenes (https://realpython.com/get-started-with-django-1/#upload-images)
+
+# Formularios: (https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django)
+    * formulario de registro de usuario
+    * formulario de matricula
+
+# vistas: (https://realpython.com/get-started-with-django-1/#create-the-views)
+    * home page
+    * ver cursos
+    * detalles de cursos
+    * registro de usuario
+    * login de usuario
+    * matricular curso
+    * cursos matriculados
+    * sesiones agendadas
 

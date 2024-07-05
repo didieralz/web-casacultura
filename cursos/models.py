@@ -25,11 +25,11 @@ class Estudiante(models.Model):
     
 class Matricula(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    Curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     fecha_matricula = models.DateField(auto_now_add=True)
     
     def __str__(self):
-        return f'{self.estudiante} - {self.curso}'
+        return f'{self.Estudiante} - {self.Curso}'
     
 class Instructor(models.Model):
     nombre = models.CharField(max_length=200)
@@ -39,14 +39,24 @@ class Instructor(models.Model):
     def __str__(self):
         return self.nombre
     
+from django.db import models
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=200)
+    descripcion = models.TextField(blank=True, null=True)
+    cursos = models.ManyToManyField(Curso, related_name='categorias')
+    
+    def __str__(self):
+        return self.nombre
+    
 class Sesion(models.Model):
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name='sesiones')
+    Curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name='sesiones')
     fecha = models.DateField()
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
     
     def __str__(self):
-        return f'Sesión de {self.curso} el {self.fecha}'
+        return f'Sesión de {self.Curso} el {self.fecha}'
 
 class Asistencia(models.Model):
     sesion = models.ForeignKey(Sesion, on_delete=models.CASCADE, related_name='asistencias')
@@ -54,4 +64,4 @@ class Asistencia(models.Model):
     presente = models.BooleanField(default=False)
     
     def __str__(self):
-        return f'{self.estudiante} - {self.sesion}'
+        return f'{self.Estudiante} - {self.sesion}'
