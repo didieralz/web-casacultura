@@ -1,0 +1,25 @@
+---------
+Completado:
+
+# proyecto inicalizado
+# app pages inicalizada e instalada
+# urls en pages creada
+# template "base.html" creado -> esto permite ahorrar tiempo al crear nuevas pistas iniciando con: 
+    {% extends "base.html" %}
+    {% block page_content %}
+    <h1>contenido html</h1>
+    {% endblock page_content %}
+# app cursos inicalizada e instalada (esta reemplaza la app "pages" del tutorial)
+# crear el modelo (https://realpython.com/get-started-with-django-1/#define-a-model)
+    * se agregan los modelos: Curso, Estudiante, Matricula, Instructor, Categoria, Sesion, Asistencia
+    * se ejectuan comando makemigrations y migrate
+    * se agregan los modelos admin
+
+
+---------
+Pendiente:
+
+# Formularios:
+    * https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django
+# vistas:
+
