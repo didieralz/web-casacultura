@@ -18,14 +18,15 @@ Completado:
     * se han agregado 3 cursos y 2 categorias
 # versiones de prueba de las vistas de index y detalle
 # Agregar la funcion en vista y la url necesaria para poder tener un boton en home que lleve al  index
-# se modifica modelo de cursos para que se puedan guardar imagenes
+# modificar modelo de cursos para poder subir imagenes (https://realpython.com/get-started-with-django-1/#upload-images)
 # Se añaden imagenes desde la interfaz de admin
+# se modifican las primeras vistas de index y details para comprobar que las imagenes se renderizan correctamente
 
 
 ---------
 Pendiente:
 
-# modificar modelo de cursos para poder subir imagenes (https://realpython.com/get-started-with-django-1/#upload-images)
+
 
 # Formularios: (https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django)
     * formulario de registro de usuario
