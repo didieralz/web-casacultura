@@ -10,11 +10,11 @@ def Curso_index(request):
     context = {
         "Cursos": Cursos
     }
-    return render(request, "cursos/cursos_index.html", context)
+    return render(request, "cursos/curso_index.html", context)
 
 def Curso_detail(request, pk):
-    Curso = Curso.objects.get(pk=pk)
+    curso = Curso.objects.get(pk=pk)
     context = {
-        "Curso": Curso
+        "Curso": curso
     }
-    return render(request, "cursos/cursos_detail.html", context)
+    return render(request, "cursos/curso_detail.html", context)
