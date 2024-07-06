@@ -3,6 +3,11 @@
 {% block page_content %}
 <h1>{{ Curso.nombre }}</h1>
 <div class="row">
+    <div class="col-md-8">
+        {% if Curso.image %}
+            <img src="{{ Curso.image.url }}" width="100%">
+        {% endif %}
+    </div>
     <div class="col-md-4">
         <h5>Descripcion del curso:</h5>
         <p>{{ Curso.descripcion }}</p>

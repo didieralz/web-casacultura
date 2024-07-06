@@ -6,7 +6,7 @@
 {% for Curso in Cursos %}
     <div class="col-md-4">
         <div class="card mb-2">
-            {% if project.image %}
+            {% if Curso.image %}
                 <img class="card-img-top" src="{{ Curso.image.url }}">
             {% endif %}
             <div class="card-body">
