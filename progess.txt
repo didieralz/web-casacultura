@@ -16,6 +16,7 @@ Completado:
     * se agregan los modelos a admin
 # agregar datos de prueba a la base de datos
     * se han agregado 3 cursos y 2 categorias
+# Agregar la funcion en vista y la url necesaria para poder tener un boton en home que lleve al  index
 
 
 ---------
