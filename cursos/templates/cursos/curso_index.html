@@ -6,6 +6,9 @@
 {% for Curso in Cursos %}
     <div class="col-md-4">
         <div class="card mb-2">
+            {% if project.image %}
+                <img class="card-img-top" src="{{ Curso.image.url }}">
+            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ Curso.nombre }}</h5>
                 <p class="card-text">{{ Curso.descripcion }}</p>

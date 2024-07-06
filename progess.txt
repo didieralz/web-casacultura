@@ -18,6 +18,8 @@ Completado:
     * se han agregado 3 cursos y 2 categorias
 # versiones de prueba de las vistas de index y detalle
 # Agregar la funcion en vista y la url necesaria para poder tener un boton en home que lleve al  index
+# se modifica modelo de cursos para que se puedan guardar imagenes
+# Se añaden imagenes desde la interfaz de admin
 
 
 ---------
