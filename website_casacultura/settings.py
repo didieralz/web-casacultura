@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
+
+login tutorial: https://learndjango.com/tutorials/django-login-and-logout-tutorial
+
 """
 
 from pathlib import Path
@@ -33,12 +36,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "cursos.apps.CursosConfig",
-    'django.contrib.admin',
+    'django.contrib.admin', # Yoohoo!!!!
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig' #el tutorial solo porponia dejarlo hasta accounts, yo agregue la ref al confing
 ]
 
 MIDDLEWARE = [
@@ -126,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / "uploads/"
 MEDIA_URL = "media/"
+
+LOGIN_REDIRECT_URL = "home" #redirecciona despues del login
+LOGOUT_REDIRECT_URL = "home" #redirecciona despues del logout
+
+#DELETE AFTER EMAIL TESTS
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # esta linea es para testear el envio de email sin necesidad de configurar el SMTP

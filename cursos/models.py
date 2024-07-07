@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User #esta linea trae el sistema d eautenticacion de usuario por defecto de django
 from django.db import models
 
 # Create your models here.

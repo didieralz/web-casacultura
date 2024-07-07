@@ -2,6 +2,14 @@
 
 {% block page_content %}
 <h1 class="mb-4">Cursos para el enriquecimiento cultural</h1>
+<form method="GET" action="{% url 'curso_index' %}" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Buscar cursos por nombre" value="{{ query }}">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+<p>¡Descubre el mundo de las artes! 🎨🎭🎶 Nuestros cursos culturales son una ventana a la creatividad, la expresión y el bienestar mental. 🌟 Aprende a pintar, bailar, tocar un instrumento o actuar en el escenario. 🌈 Conéctate con otros amantes del arte y libera el estrés mientras desarrollas tus habilidades. ¡Inscríbete hoy y despierta tu lado más creativo!</p>
 <div class="row">
 {% for Curso in Cursos %}
     <div class="col-md-4">

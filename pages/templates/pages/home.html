@@ -1,11 +1,29 @@
 <!-- pages/templates/pages/home.html -->
 
 {% extends "base.html" %}
-
+{% block title %}Home{% endblock %}
 {% block page_content %}
-    <h1>Hello, World!</h1>
+
+    <h1>Home</h1>
+    <!-- tutorial para el login contiene este codigo para saludar el usuario https://learndjango.com/tutorials/django-login-and-logout-tutorial -->
+    {% if user.is_authenticated %}
+        Hola {{ user.username }}!
+        <p><a href="{% url 'password_change' %}">Password Change</a></p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+          </form>
+    {% else %}
+        <p>You are not logged in</p>
+        <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+    <br>
+    <!--agrego boton para navegar al index-->
+    <br>
     <a href="{% url 'curso_index' %}"
         class="btn btn-primary">
         Ver cusos
     </a>
+
 {% endblock page_content %}

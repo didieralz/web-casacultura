@@ -6,7 +6,11 @@ from cursos.models import Curso
 # Create your views here.
 
 def Curso_index(request):
-    Cursos = Curso.objects.all()
+    query = request.GET.get('q')
+    if query:
+        Cursos = Curso.objects.filter(nombre__icontains=query)
+    else:
+        Cursos = Curso.objects.all()
     context = {
         "Cursos": Cursos
     }
