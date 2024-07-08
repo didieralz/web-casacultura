@@ -41,14 +41,17 @@
 - [x] se agrega boton logout en home
 ## Se crea app Accounts para manejar la logica de las cuentas
 *https://learndjango.com/tutorials/django-login-and-logout-tutorial#:~:text=to%20log%20out%3F%22-,Sign%20Up%20Page,-Now%20that%20we*
+>The auth app we've now included provides us with multiple authentication views and URLs for handling login, logout, password change, password reset, etc. It notably does not include a view and URL for signup, so we have to configure that ourselves.
 - [x] se crea la pagina para el [signup](templates/registration/signup.html) siguiendo los pasos en: [signupTutorial](https://learndjango.com/tutorials/django-login-and-logout-tutorial#:~:text=to%20log%20out%3F%22-,Sign%20Up%20Page,-Now%20that%20we)
 
-# Pendiente:
 
-## Manejo de  usuarios 
-*https://learndjango.com/tutorials/django-login-and-logout-tutorial*
->The auth app we've now included provides us with multiple authentication views and URLs for handling login, logout, password change, password reset, etc. It notably does not include a view and URL for signup, so we have to configure that ourselves.
-- crear sign up page: 
+## Escuelas y categorias:
+- [x] se agrega categorias a modelo de cursos
+- [ ] se agrega modelo de escuelas
+- [ ] se agrega escuelas a modelo de curso
+- [ ] se agrega filtros por etiquetas y escuelas
+
+# Pendiente:
 
 ## Formularios: 
 *https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django*
@@ -57,10 +60,11 @@
 
 ## vistas: 
 *https://realpython.com/get-started-with-django-1/#create-the-views*
-- home page: 
+- Estilizar home page: 
   - [ ] boton para login 
   - [ ] logout 
   - [ ] register 
+  - [ ] password reset
   - [ ] mostrar el nombre del usuario logeado
 - user details page: 
   - [ ] login 

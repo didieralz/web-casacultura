@@ -20,6 +20,13 @@
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ Curso.nombre }}</h5>
                 <p class="card-text">{{ Curso.descripcion|truncatewords:20 }}</p>
+                <p class="card-text">
+                    <strong>Categorías:</strong>
+                    <br>
+                    {% for categoria in Curso.categorias.all %}
+                        <span class="badge bg-secondary">{{ categoria.nombre }}</span>  
+                    {% endfor %}
+                </p>
                 <div class="mt-auto">
                     <a href="{% url 'curso_detail' Curso.pk %}"
                     class="btn btn-primary btn-block">
