@@ -17,7 +17,6 @@
 <h1>contenido html</h1>
 {% endblock page_content %}
 ```
-
 ## app cursos inicalizada e instalada 
 *esta reemplaza la app "pages" del tutorial* [^TutorialPortfolio]
 - [x] se agrega placeholder [home](pages/templates/pages/home.html)
@@ -43,13 +42,16 @@
 *https://learndjango.com/tutorials/django-login-and-logout-tutorial#:~:text=to%20log%20out%3F%22-,Sign%20Up%20Page,-Now%20that%20we*
 >The auth app we've now included provides us with multiple authentication views and URLs for handling login, logout, password change, password reset, etc. It notably does not include a view and URL for signup, so we have to configure that ourselves.
 - [x] se crea la pagina para el [signup](templates/registration/signup.html) siguiendo los pasos en: [signupTutorial](https://learndjango.com/tutorials/django-login-and-logout-tutorial#:~:text=to%20log%20out%3F%22-,Sign%20Up%20Page,-Now%20that%20we)
-
-
 ## Escuelas y categorias:
 - [x] se agrega categorias a modelo de cursos
-- [ ] se agrega modelo de escuelas
-- [ ] se agrega escuelas a modelo de curso
+- [x] se agrega modelo de escuelas
+- [x] se agrega escuelas a modelo de curso
 - [ ] se agrega filtros por etiquetas y escuelas
+## Funcion Estudiantes y Matriculas
+- [X] modificado el modelo de estudiantes segun la necesidad
+- [ ] Generar formulario para crear perfil de estudiante
+- [ ] Revisar y  modificar modelo de matricula
+- [ ] Generar formulario para matricula
 
 # Pendiente:
 

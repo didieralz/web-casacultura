@@ -8,4 +8,4 @@ from . import models
 class CreateEstudiante (forms.ModelForm):
     class Meta:
         model = models.Estudiante
-        fields = ['usuario','direccion','telefono']
+        fields = ['usuario_relacionado','nombres','apellidos','fecha_nacimiento','sisben','direccion','telefono']

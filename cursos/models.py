@@ -10,22 +10,34 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
+class Escuelas(models.Model):
+    nombre = models.CharField(max_length=200)
+    descripcion = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return self.nombre
+
 class Curso(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_inicio = models.DateField(blank=False)
+    fecha_fin = models.DateField(blank=False)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     capacidad = models.IntegerField()
     horas_semanales = models.IntegerField()
     image = models.FileField(upload_to="cursos_images/", blank=True)
     categorias = models.ManyToManyField(Categoria, related_name='cursos', blank=True)
+    escuela = models.ForeignKey(Escuelas, related_name='cursos', null=True,on_delete=models.CASCADE)
     
     def __str__(self):
         return self.nombre
     
 class Estudiante(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario_relacionado = models.ForeignKey(User,related_name='usuario_relacionado', on_delete=models.CASCADE,default=1)
+    nombres = models.CharField(max_length=255)
+    apellidos = models.CharField(max_length=255)
+    fecha_nacimiento = models.DateField(blank=False)
+    sisben = models.CharField(max_length=3)
     direccion = models.CharField(max_length=255)
     telefono = models.CharField(max_length=15)
     

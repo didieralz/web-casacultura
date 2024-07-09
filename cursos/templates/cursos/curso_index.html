@@ -21,10 +21,15 @@
                 <h5 class="card-title">{{ Curso.nombre }}</h5>
                 <p class="card-text">{{ Curso.descripcion|truncatewords:20 }}</p>
                 <p class="card-text">
+                    <strong>Escuela:</strong>
+                    <br>
+                        <span class="badge rounded-pill bg-primary">{{ Curso.escuela }}</span>  
+                </p>
+                <p class="card-text">
                     <strong>Categorías:</strong>
                     <br>
                     {% for categoria in Curso.categorias.all %}
-                        <span class="badge bg-secondary">{{ categoria.nombre }}</span>  
+                        <span class="badge bg-info" title="{{ categoria.descripcion }}" >{{ categoria.nombre }}</span>  
                     {% endfor %}
                 </p>
                 <div class="mt-auto">
