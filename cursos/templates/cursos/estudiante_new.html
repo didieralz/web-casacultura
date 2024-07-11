@@ -1,0 +1,16 @@
+<!--/cursos/registro_estudiante/-->
+{% extends "base.html" %}
+{% block title %}titulo{% endblock %}
+{% block page_content %}
+<section>
+    <h1>contenido html</h1>
+    <form class="form-control" action="{% url 'estudiante_new' %}" method="post" enctype="multipart/form-data">
+        <!-- entre las llaves {} referencio la url del form como nombre_de_la_url -->
+        {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
+         {{form}} <!-- traigo el form desde el argumento context de la vista en views-->
+         <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</section>
+
+{% endblock page_content %}

@@ -69,6 +69,7 @@ class Sesion(models.Model):
     fecha = models.DateField()
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
+
     
     def __str__(self):
         return f'Sesión de {self.Curso} el {self.fecha}'

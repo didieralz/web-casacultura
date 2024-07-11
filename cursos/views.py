@@ -2,6 +2,7 @@
 
 from django.shortcuts import render
 from cursos.models import Curso
+from . import forms
 
 # Create your views here.
 
@@ -22,3 +23,8 @@ def Curso_detail(request, pk):
         "Curso": curso
     }
     return render(request, "cursos/curso_detail.html", context)
+ 
+def estudiante_new(request):
+    form = forms.CreateEstudiante()
+    context = {'form':form}
+    return render(request,'cursos/estudiante_new.html',context)
