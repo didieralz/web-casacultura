@@ -31,9 +31,9 @@ class Curso(models.Model):
     
     def __str__(self):
         return self.nombre
-    
+   
 class Estudiante(models.Model):
-    usuario_relacionado = models.ForeignKey(User,related_name='usuario_relacionado', on_delete=models.CASCADE,default=1)
+    usuario = models.ForeignKey(User,related_name='usuario_relacionado', on_delete=models.CASCADE,default=1)
     nombres = models.CharField(max_length=255)
     apellidos = models.CharField(max_length=255)
     fecha_nacimiento = models.DateField(blank=False)
@@ -43,6 +43,7 @@ class Estudiante(models.Model):
     
     def __str__(self):
         return self.usuario.username
+
     
 class Matricula(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
@@ -81,4 +82,5 @@ class Asistencia(models.Model):
     
     def __str__(self):
         return f'{self.Estudiante} - {self.sesion}'
+
     

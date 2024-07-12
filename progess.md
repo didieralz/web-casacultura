@@ -48,8 +48,9 @@
 - [x] se agrega escuelas a modelo de curso
 - [ ] se agrega filtros por etiquetas y escuelas
 ## Funcion Estudiantes y Matriculas
-- [X] modificado el modelo de estudiantes segun la necesidad
-- [ ] Generar formulario para crear perfil de estudiante
+- [x] modificado el modelo de estudiantes segun la necesidad
+- [x] Generar formulario para crear perfil de estudiante
+- [ ] Generar vista de estudiantes
 - [ ] Revisar y  modificar modelo de matricula
 - [ ] Generar formulario para matricula
 

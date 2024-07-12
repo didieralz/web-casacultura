@@ -1,8 +1,10 @@
 # cursoss/views.py
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cursos.models import Curso
+from django.contrib.auth.decorators import login_required #implmentarlogin required, en seting se debe poner login url
 from . import forms
+ 
 
 # Create your views here.
 
@@ -23,8 +25,18 @@ def Curso_detail(request, pk):
         "Curso": curso
     }
     return render(request, "cursos/curso_detail.html", context)
- 
+
+@login_required(login_url="/users/login")
 def estudiante_new(request):
-    form = forms.CreateEstudiante()
+    if request.method == 'POST':
+        form = forms.CreateEstudiante(request.POST,request.FILES)#no estoy seguro de necesitar request.FILES ya que mi form no tiene archivos
+        if form.is_valid():
+            # save with user 
+            newEstudiante = form.save(commit = False)
+            newEstudiante.usuario = request.user
+            newEstudiante.save()
+            return redirect("home") #hay que cambiar el redirect a la pagina de lista de estudiantes cuando exista
+    else:
+        form = forms.CreateEstudiante()
     context = {'form':form}
     return render(request,'cursos/estudiante_new.html',context)
