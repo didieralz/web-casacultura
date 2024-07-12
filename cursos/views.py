@@ -1,7 +1,7 @@
 # cursoss/views.py
 
 from django.shortcuts import render, redirect
-from cursos.models import Curso
+from cursos.models import Curso,Estudiante
 from django.contrib.auth.decorators import login_required #implmentarlogin required, en seting se debe poner login url
 from . import forms
  
@@ -35,8 +35,16 @@ def estudiante_new(request):
             newEstudiante = form.save(commit = False)
             newEstudiante.usuario = request.user
             newEstudiante.save()
-            return redirect("home") #hay que cambiar el redirect a la pagina de lista de estudiantes cuando exista
+            return redirect("estudiante_list") #hay que cambiar el redirect a la pagina de lista de estudiantes cuando exista
     else:
         form = forms.CreateEstudiante()
     context = {'form':form}
     return render(request,'cursos/estudiante_new.html',context)
+
+@login_required(login_url="/users/login")
+def estudiante_list(request):
+    Estudiantes = Estudiante.objects.filter(usuario=request.user)
+    context = {
+        "Estudiantes": Estudiantes
+    }
+    return render(request, "cursos/Estudiante_list.html", context)

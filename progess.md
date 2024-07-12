@@ -50,7 +50,7 @@
 ## Funcion Estudiantes y Matriculas
 - [x] modificado el modelo de estudiantes segun la necesidad
 - [x] Generar formulario para crear perfil de estudiante
-- [ ] Generar vista de estudiantes
+- [x] Generar vista de estudiantes [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 - [ ] Revisar y  modificar modelo de matricula
 - [ ] Generar formulario para matricula
 
@@ -90,6 +90,7 @@
   - [ ] [home](pages/templates/pages/home.html)
   - [ ] [curso details](cursos/templates/cursos/curso_detail.html)
   - [ ] [curso index](cursos/templates/cursos/curso_index.html)
+  - [ ] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 
 [^TutorialPortfolio]: https://realpython.com/get-started-with-django-1
 [^MarkdownGuide]: https://markdownguide.offshoot.io/extended-syntax/
