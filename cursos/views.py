@@ -41,7 +41,7 @@ def estudiante_new(request):
     context = {'form':form}
     return render(request,'cursos/estudiante_new.html',context)
 
-@login_required(login_url="/users/login")
+@login_required(login_url="login")
 def estudiante_list(request):
     Estudiantes = Estudiante.objects.filter(usuario=request.user)
     context = {

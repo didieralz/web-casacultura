@@ -36,6 +36,9 @@ class Estudiante(models.Model):
     usuario = models.ForeignKey(User,related_name='usuario_relacionado', on_delete=models.CASCADE,default=1)
     nombres = models.CharField(max_length=255)
     apellidos = models.CharField(max_length=255)
+    tipo_documento_choices= {"cc":"Cedula de ciudadania","ti":"Tarjeta de identidad","rc":"Registro Civil","ce":"Cedula de Extranjería","pep":"Permiso especial de permanencia"}
+    tipo_documento = models.CharField(max_length=255,choices=tipo_documento_choices)
+    documento = models.CharField(max_length=255)
     fecha_nacimiento = models.DateField(blank=False)
     sisben = models.CharField(max_length=3)
     direccion = models.CharField(max_length=255)
