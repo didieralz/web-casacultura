@@ -75,8 +75,9 @@
 - [x] Generar formulario para crear perfil de estudiante
 - [x] Generar vista de estudiantes [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 - [x] formulairo de nuevo estudiante debe tener selector de fecha [widget calendario para form](https://pythonassets.com/posts/date-field-with-calendar-widget-in-django-forms/)
-- [ ] Revisar y  modificar modelo de matricula
-- [ ] Generar formulario para matricula
+- [x] Revisar y  modificar modelo de matricula
+- [x] Generar formulario para matricula
+- [ ] Generar alternativas del formulario de matricula que traigan el estudiante o el cruso fijo
 
 # Pendiente:
 
