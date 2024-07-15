@@ -26,7 +26,7 @@ def Curso_detail(request, pk):
     }
     return render(request, "cursos/curso_detail.html", context)
 
-@login_required(login_url="/users/login")
+@login_required(login_url="login")
 def estudiante_new(request):
     if request.method == 'POST':
         form = forms.CreateEstudiante(request.POST,request.FILES)#no estoy seguro de necesitar request.FILES ya que mi form no tiene archivos
@@ -48,3 +48,18 @@ def estudiante_list(request):
         "Estudiantes": Estudiantes
     }
     return render(request, "cursos/Estudiante_list.html", context)
+
+@login_required(login_url="login")
+def matricular(request):
+
+    if request.method == 'POST':
+        form = forms.MatricularEstudiante(request.POST,request.FILES)#no estoy seguro de necesitar request.FILES ya que mi form no tiene archivos
+        if form.is_valid():
+            newMatricula = form.save(commit = False)
+            newMatricula.save()
+            return redirect("estudiante_list") #hay que cambiar el redirect a la pagina de cursos matriculados
+    else:
+        form = forms.MatricularEstudiante()
+
+    context = {'form':form}
+    return render(request,'cursos/matricular.html',context)

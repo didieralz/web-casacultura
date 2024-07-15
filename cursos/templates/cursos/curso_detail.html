@@ -18,6 +18,12 @@
         <p>{{ Curso.fecha_inicio }}</p>
         <h5>Fecha fin:</h5>
         <p>{{ Curso.fecha_fin }}</p>
+        <div class="mt-auto">
+            <a href="{% url 'matricular' %}"
+            class="btn btn-primary btn-block">
+            Matricularse a este curso
+            </a>
+        </div>
     </div>
 </div>
 {% endblock page_content %}

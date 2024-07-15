@@ -54,7 +54,7 @@ class Matricula(models.Model):
     fecha_matricula = models.DateField(auto_now_add=True)
     
     def __str__(self):
-        return f'{self.Estudiante} - {self.Curso}'
+        return f'{self.estudiante} - {self.Curso}'
     
 class Instructor(models.Model):
     nombre = models.CharField(max_length=200)

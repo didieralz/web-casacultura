@@ -13,3 +13,8 @@ class CreateEstudiante (forms.ModelForm):
         widgets = {
             'fecha_nacimiento': forms.DateInput(format="%Y-%m-%d", attrs={"type": "date"}),
         }
+
+class MatricularEstudiante (forms.ModelForm):
+    class Meta:
+        model = models.Matricula
+        fields = ['estudiante','Curso']

@@ -1,0 +1,16 @@
+<!-- http://127.0.0.1:8000/cursos/matricular/-->
+{% extends "base.html" %}
+{% block title %}Matricurlase{% endblock %}
+{% block page_content %}
+<section>
+    <h1>Matricular cusos</h1>
+    <form class="form-control" action="{% url 'matricular' %}" method="post" enctype="multipart/form-data">
+        <!-- entre las llaves {} referencio la url del form como nombre_de_la_url -->
+        {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
+         {{form}} <!-- traigo el form desde el argumento context de la vista en views-->
+         <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</section>
+
+{% endblock page_content %}
