@@ -101,7 +101,7 @@
 - [ ] [curso index](cursos/templates/cursos/curso_index.html)
 - [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
 - [ ] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
-
+### test commit
 [^TutorialPortfolio]: https://realpython.com/get-started-with-django-1
 [^MarkdownGuide]: https://markdownguide.offshoot.io/extended-syntax/
 [^LearnDJango]:https://learndjango.com/
