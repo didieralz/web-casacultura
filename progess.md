@@ -1,6 +1,6 @@
 [^MarkdownGuide]
 [^LearnDJango]
-# Completado:
+# To do:
 
 ## proyecto inicalizado
 ## app pages inicalizada e instalada
@@ -79,21 +79,6 @@
 - [x] Generar formulario para matricula
 - [ ] Generar alternativas del formulario de matricula que traigan el estudiante o el cruso fijo
 
-# Pendiente:
-
-## Formularios: 
-*https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Forms#proceso_del_manejo_de_formularios_de_django*
-- formulario de matricula
-
-## user details page: 
-- [ ] login 
-- [ ] logout 
-- [ ] cambio de contraseña 
-- [ ] detalles del usuario logeado
-
-## matricular curso
-## cursos matriculados
-## sesiones agendadas
 ## Mejorar diseño de paginas
 - [ ] [login](templates/registration/login.html)
 - [ ] [signup](templates/registration/signup.html)
@@ -102,7 +87,26 @@
 - [ ] [curso index](cursos/templates/cursos/curso_index.html)
 - [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
 - [ ] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
-### test commit
+
+## Estilizado Home:
+- [x] Agregar Nav bar a la plantilla par aque seiempre sea visible la opcion de home, log in y otras
+- [ ] Agregar carousel a home page
+- [ ] Agregar Mision y vision a home page
+- [ ] (opcional) Agregar carousel nuestro equipo con overviews de los profesores creados
+
+## user management: 
+- [x] login 
+- [x] logout 
+- [x] cambio de contraseña 
+- [ ] pagina de detalles del usuario logeado
+  
+## cursos matriculados
+- [ ] Consultar cursos matriculados por estudiante
+- [ ] Vista calendario de estudiante (requiere featur sesiones)
+
+## sesiones agendadas
+- [ ] Formulario para agendar sesiones de clases
+
 [^TutorialPortfolio]: https://realpython.com/get-started-with-django-1
 [^MarkdownGuide]: https://markdownguide.offshoot.io/extended-syntax/
 [^LearnDJango]:https://learndjango.com/
