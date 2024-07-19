@@ -3,19 +3,33 @@
 {% block title %}Home{% endblock %} 
 {% block page_content %}
 <!-- Contenido principal -->
-<div class="container mt-5">
+<div class="container mt-5 bg-light " style="--bs-bg-opacity: 1;"> <!-- opacity me permitira poner una imagen de fondo para hacerlo interesante-->
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1>Casa de la cultura</h1>
-      <p class="lead"> {% if user.is_authenticated %} Bienvenido, {{ user.username }}! {% else %} No has iniciado sesión. {% endif %} </p>
+      <div class="container-fluid p-3"><h1>Casa de la cultura</h1></div>
       <!-- Botones de navegación adicionales -->
-      <div class="mt-4">
-         {% if user.is_authenticated %}
-         <div class="d-grid gap-2 d-md-block"> 
-            <a href="{% url 'curso_index' %}" class="btn btn-info btn-sm  btn-block">Ver Cursos</a> <a href="{% url 'estudiante_list' %}" class="btn btn-info btn-sm  btn-block">Mi Perfil de Estudiante</a> 
-         </div>
-         {% else %} <a href="{% url 'curso_index' %}" class="btn btn-info btn-sm ">Ver Cursos</a> {% endif %}
-      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0"><i class="fa-solid fa-user"></i> {% if user.is_authenticated %} Bienvenido, {{ user.username }}! {% else %} No has iniciado sesión. {% endif %}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'curso_index' %}" class="btn btn-dark btn-block w-100">Ver Cursos</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'estudiante_list' %}" class="btn btn-dark btn-block w-100 ">Mi Perfil de Estudiante</a>
+                        </li>
+                    {% else %}
+      
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
     </div>
   </div>
   <!-- Carousel con imagenes-->

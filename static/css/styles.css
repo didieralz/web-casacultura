@@ -1,0 +1,7 @@
+body {
+    /*background-image: url("../images/orchestra.jpg");*/ /*No funciona*/
+    background: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
