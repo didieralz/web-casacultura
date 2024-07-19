@@ -36,13 +36,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "cursos.apps.CursosConfig",
-    'django.contrib.admin', # Yoohoo!!!!
+    'django.contrib.admin', 
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig' #el tutorial solo porponia dejarlo hasta accounts, yo agregue la ref al confing
+    'accounts.apps.AccountsConfig' 
 ]
 
 MIDDLEWARE = [
@@ -122,6 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR /"var\www"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

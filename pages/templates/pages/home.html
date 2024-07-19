@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block page_content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}Home{% endblock %} 
+{% block page_content %}
 <!-- Contenido principal -->
 <div class="container mt-5">
   <div class="row">
@@ -25,24 +28,24 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://via.placeholder.com/1200x400.png?text=Slide+1" class="d-block w-100" alt="...">
+        <img src="{% static 'image/orchestra.jpg' %}" class="d-block w-100" alt="Orquesta" style="object-fit:cover" width="1200" height="400">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5>Escuela de musica</h5>
+          <p>Acompañamiento integral del aprendizaje en gran variedad de instrumentos para todos los niveles de de habilidad y edades.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/1200x400.png?text=Slide+2" class="d-block w-100" alt="...">
+        <img src="{% static 'image/crochet.jpg' %}" class="d-block w-100" alt="Manualidades" style="object-fit:cover" width="1200" height="400">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+          <h5>Escuela de bellas artes</h5>
+          <p>Enseñanza de tecnicas y espacios propicios para la creatividad y el esparcimiento.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/1200x400.png?text=Slide+3" class="d-block w-100" alt="...">
+        <img src="{% static 'image/escenario.webp' %}" class="d-block w-100" alt="..." style="object-fit:cover" width="1200" height="400">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+          <h5>Grupos representativos</h5>
+          <p>Acompañamiento a grupos representativos, para mostrar y apoyar a nuestros artistas mas talentosos.</p>
         </div>
       </div>
     </div>
@@ -63,7 +66,7 @@
     </div>
     <div class="col-md-6">
         <h2>Mission</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nisi turpis. Vestibulum eleifend eros in mi tristique, a congue libero fermentum.</p>
+        <p>La “Casa de la Cultura” tiene como misión fomentar y promover el desarrollo artístico y cultural de nuestra comunidad. Nos comprometemos a ofrecer un espacio inclusivo y accesible donde personas de todas las edades puedan explorar, aprender y expresar sus capacidades artísticas. A través de programas educativos, talleres y eventos culturales, buscamos enriquecer la vida de nuestros ciudadanos, apoyando y celebrando el talento local.</p>
     </div>
 </div>
 
@@ -71,7 +74,7 @@
 <div class="row">
     <div class="col-md-6">
         <h2>Vision</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nisi turpis. Vestibulum eleifend eros in mi tristique, a congue libero fermentum.</p>
+        <p>Nuestra visión es convertirnos en el corazón cultural del pueblo, un lugar donde la creatividad florece y el talento es reconocido y valorado. Aspiramos a ser un referente en la promoción de las artes, proporcionando oportunidades continuas para el crecimiento personal y profesional de nuestros ciudadanos. En la “Casa de la Cultura”, creemos que el arte es una herramienta poderosa para la cohesión social y el bienestar, y trabajamos para que cada individuo descubra y desarrolle su potencial artístico.</p>
     </div>
     <div class="col-md-6">
         <img src="https://via.placeholder.com/600x400.png?text=Vision+Image" class="img-fluid" alt="Vision Image">

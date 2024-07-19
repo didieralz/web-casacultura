@@ -1,6 +1,6 @@
 [^MarkdownGuide]
 [^LearnDJango]
-# To do:
+# Tareas:
 
 ## proyecto inicalizado
 ## app pages inicalizada e instalada
