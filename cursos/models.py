@@ -45,7 +45,7 @@ class Estudiante(models.Model):
     telefono = models.CharField(max_length=15)
     
     def __str__(self):
-        return self.usuario.username
+        return self.apellidos+", "+self.nombres+"("+self.usuario.username+")"
 
     
 class Matricula(models.Model):

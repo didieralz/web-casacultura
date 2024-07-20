@@ -54,6 +54,7 @@ def matricular(request):
 
     if request.method == 'POST':
         form = forms.MatricularEstudiante(request.POST,request.FILES)#no estoy seguro de necesitar request.FILES ya que mi form no tiene archivos
+        form.fields["estudiante"].queryset = Estudiante.objects.filter(usuario=request.user.id) #intentando que solo muestre los estudantes del usuario
         if form.is_valid():
             newMatricula = form.save(commit = False)
             newMatricula.save()
