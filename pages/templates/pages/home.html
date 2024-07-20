@@ -3,95 +3,98 @@
 {% block title %}Home{% endblock %} 
 {% block page_content %}
 <!-- Contenido principal -->
-<div class="container mt-5 bg-light " style="--bs-bg-opacity: 1;"> <!-- opacity me permitira poner una imagen de fondo para hacerlo interesante-->
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="container-fluid p-3"><h1>Casa de la cultura</h1></div>
-      <!-- Botones de navegación adicionales -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
-        <div class="container-fluid">
-            <a class="navbar-brand mb-0"><i class="fa-solid fa-user"></i> {% if user.is_authenticated %} Bienvenido, {{ user.username }}! {% else %} No has iniciado sesión. {% endif %}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+<div class="container mt-5">
+   <!-- opacity me permitira poner una imagen de fondo para hacerlo interesante-->
+   <div class="row">
+      <div class="col-md-12 text-center">
+         <div class="container-fluid p-3">
+            <h1>Casa de la cultura</h1>
+         </div>
+         <!-- Botones de navegación adicionales -->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
+            <div class="container-fluid">
+               <a class="navbar-brand mb-0"><i class="fa-solid fa-user"></i> {% if user.is_authenticated %} Bienvenido, {{ user.username }}! {% else %} No has iniciado sesión. {% endif %}</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
                         <a href="{% url 'curso_index' %}" class="btn btn-dark btn-block w-100">Ver Cursos</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a href="{% url 'estudiante_list' %}" class="btn btn-dark btn-block w-100 ">Mi Perfil de Estudiante</a>
-                        </li>
-                    {% else %}
-      
-                    {% endif %}
-                </ul>
+                     </li>
+                     {% if user.is_authenticated %}
+                     <li class="nav-item">
+                        <a href="{% url 'estudiante_list' %}" class="btn btn-dark btn-block w-100 ">Mi Perfil de Estudiante</a>
+                     </li>
+                     {% else %}
+                     {% endif %}
+                  </ul>
+               </div>
             </div>
-        </div>
-    </nav>
-    </div>
-  </div>
-  <!-- Carousel con imagenes-->
-  <br>
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'image/orchestra.jpg' %}" class="d-block w-100" alt="Orquesta" style="object-fit:cover" width="1200" height="400">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Escuela de musica</h5>
-          <p>Acompañamiento integral del aprendizaje en gran variedad de instrumentos para todos los niveles de de habilidad y edades.</p>
-        </div>
+         </nav>
       </div>
-      <div class="carousel-item">
-        <img src="{% static 'image/crochet.jpg' %}" class="d-block w-100" alt="Manualidades" style="object-fit:cover" width="1200" height="400">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Escuela de bellas artes</h5>
-          <p>Enseñanza de tecnicas y espacios propicios para la creatividad y el esparcimiento.</p>
-        </div>
+   </div>
+   <!-- Carousel con imagenes-->
+   <br>
+   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-item">
-        <img src="{% static 'image/escenario.webp' %}" class="d-block w-100" alt="..." style="object-fit:cover" width="1200" height="400">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Grupos representativos</h5>
-          <p>Acompañamiento a grupos representativos, para mostrar y apoyar a nuestros artistas mas talentosos.</p>
-        </div>
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <img src="{% static 'image/orchestra.jpg' %}" class="d-block w-100" alt="Orquesta" style="object-fit:cover" width="1200" height="400">
+            <div class="carousel-caption d-none d-md-block">
+               <h5>Escuela de musica</h5>
+               <p>Acompañamiento integral del aprendizaje en gran variedad de instrumentos para todos los niveles de de habilidad y edades.</p>
+            </div>
+         </div>
+         <div class="carousel-item">
+            <img src="{% static 'image/crochet.jpg' %}" class="d-block w-100" alt="Manualidades" style="object-fit:cover" width="1200" height="400">
+            <div class="carousel-caption d-none d-md-block">
+               <h5>Escuela de bellas artes</h5>
+               <p>Enseñanza de tecnicas y espacios propicios para la creatividad y el esparcimiento.</p>
+            </div>
+         </div>
+         <div class="carousel-item">
+            <img src="{% static 'image/escenario.webp' %}" class="d-block w-100" alt="..." style="object-fit:cover" width="1200" height="400">
+            <div class="carousel-caption d-none d-md-block">
+               <h5>Grupos representativos</h5>
+               <p>Acompañamiento a grupos representativos, para mostrar y apoyar a nuestros artistas mas talentosos.</p>
+            </div>
+         </div>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <!-- fin Carousel con imagenes-->
+      </button>
+   </div>
+   <!-- fin Carousel con imagenes-->
    <br>
-  <div class="row mb-5">
-    <div class="col-md-6">
-        <img src="https://via.placeholder.com/600x400.png?text=Mission+Image" class="img-fluid" alt="Mission Image">
-    </div>
-    <div class="col-md-6">
-        <h2>Mission</h2>
-        <p>La “Casa de la Cultura” tiene como misión fomentar y promover el desarrollo artístico y cultural de nuestra comunidad. Nos comprometemos a ofrecer un espacio inclusivo y accesible donde personas de todas las edades puedan explorar, aprender y expresar sus capacidades artísticas. A través de programas educativos, talleres y eventos culturales, buscamos enriquecer la vida de nuestros ciudadanos, apoyando y celebrando el talento local.</p>
-    </div>
+   <div class="row mb-5">
+      <div class="col-md-6">
+         <img src="https://via.placeholder.com/600x400.png?text=Mission+Image" class="img-fluid" alt="Mission Image">
+      </div>
+      <div class="col-md-6">
+         <h2>Mission</h2>
+         <p>La “Casa de la Cultura” tiene como misión fomentar y promover el desarrollo artístico y cultural de nuestra comunidad. Nos comprometemos a ofrecer un espacio inclusivo y accesible donde personas de todas las edades puedan explorar, aprender y expresar sus capacidades artísticas. A través de programas educativos, talleres y eventos culturales, buscamos enriquecer la vida de nuestros ciudadanos, apoyando y celebrando el talento local.</p>
+      </div>
+   </div>
+   <!-- Vision Section -->
+   <div class="row">
+      <div class="col-md-6">
+         <h2>Vision</h2>
+         <p>Nuestra visión es convertirnos en el corazón cultural del pueblo, un lugar donde la creatividad florece y el talento es reconocido y valorado. Aspiramos a ser un referente en la promoción de las artes, proporcionando oportunidades continuas para el crecimiento personal y profesional de nuestros ciudadanos. En la “Casa de la Cultura”, creemos que el arte es una herramienta poderosa para la cohesión social y el bienestar, y trabajamos para que cada individuo descubra y desarrolle su potencial artístico.</p>
+      </div>
+      <div class="col-md-6">
+         <img src="https://via.placeholder.com/600x400.png?text=Vision+Image" class="img-fluid" alt="Vision Image">
+      </div>
+   </div>
 </div>
-
-<!-- Vision Section -->
-<div class="row">
-    <div class="col-md-6">
-        <h2>Vision</h2>
-        <p>Nuestra visión es convertirnos en el corazón cultural del pueblo, un lugar donde la creatividad florece y el talento es reconocido y valorado. Aspiramos a ser un referente en la promoción de las artes, proporcionando oportunidades continuas para el crecimiento personal y profesional de nuestros ciudadanos. En la “Casa de la Cultura”, creemos que el arte es una herramienta poderosa para la cohesión social y el bienestar, y trabajamos para que cada individuo descubra y desarrolle su potencial artístico.</p>
-    </div>
-    <div class="col-md-6">
-        <img src="https://via.placeholder.com/600x400.png?text=Vision+Image" class="img-fluid" alt="Vision Image">
-    </div>
-</div>
-</div> {% endblock page_content %}
+<br>
+{% endblock page_content %}

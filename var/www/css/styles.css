@@ -1,5 +1,7 @@
+
 body {
-    background-image: url("../images/orchestra.jpg");
+    background-image: url("../image/saxophone.jpg"); 
+    /*background: gray;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

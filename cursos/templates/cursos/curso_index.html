@@ -1,46 +1,51 @@
 {% extends "base.html" %}
-
 {% block page_content %}
-<h1 class="mb-4">Cursos para el enriquecimiento cultural</h1>
-<form method="GET" action="{% url 'curso_index' %}" class="mb-4">
-    <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Buscar cursos por nombre" value="{{ query }}">
-        <button type="submit" class="btn btn-primary">Buscar</button>
-    </div>
-</form>
-
-<p>¡Descubre el mundo de las artes! 🎨🎭🎶 Nuestros cursos culturales son una ventana a la creatividad, la expresión y el bienestar mental. 🌟 Aprende a pintar, bailar, tocar un instrumento o actuar en el escenario. 🌈 Conéctate con otros amantes del arte y libera el estrés mientras desarrollas tus habilidades. ¡Inscríbete hoy y despierta tu lado más creativo!</p>
-<div class="row">
-{% for Curso in Cursos %}
-    <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+<div class="container mt-5">
+   <h1 class="text-center mb-4 w-100">Cursos para el enriquecimiento cultural</h1>
+   <form method="GET" action="{% url 'curso_index' %}" class="mb-4">
+      <div class="input-group text-center">
+         <input type="text" name="q" class="form-control" placeholder="Buscar cursos" value="{{ query }}">
+         <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+   </form>
+   <p class="text-center mb-4 w-100" >¡Descubre el mundo de las artes!  Nuestros cursos culturales son una ventana a la creatividad, la expresión y el bienestar mental. Aprende a pintar, bailar, tocar un instrumento o actuar en el escenario. Conéctate con otros amantes del arte y libera el estrés mientras desarrollas tus habilidades. ¡Inscríbete hoy y despierta tu lado más creativo!</p>
+   <div class="row" style="padding-bottom:10px">
+      {% for Curso in Cursos %}
+      <div class="col-md-4">
+         <div class="card h-100 shadow-sm">
             {% if Curso.image %}
-                <img class="card-img-top" src="{{ Curso.image.url }}" alt="Imagen del curso" style="height: 200px; object-fit: cover;" overflow = "hidden">
+            <img class="card-img-top" src="{{ Curso.image.url }}" alt="Imagen del curso" style="height: 200px; object-fit: cover;" overflow = "hidden">
             {% endif %}
             <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ Curso.nombre }}</h5>
-                <p class="card-text">{{ Curso.descripcion|truncatewords:20 }}</p>
-                <p class="card-text">
-                    <strong>Escuela:</strong>
-                    <br>
-                        <span class="badge rounded-pill bg-primary">{{ Curso.escuela }}</span>  
-                </p>
-                <p class="card-text">
-                    <strong>Categorías:</strong>
-                    <br>
-                    {% for categoria in Curso.categorias.all %}
-                        <span class="badge bg-info" title="{{ categoria.descripcion }}" >{{ categoria.nombre }}</span>  
-                    {% endfor %}
-                </p>
-                <div class="mt-auto">
-                    <a href="{% url 'curso_detail' Curso.pk %}"
-                    class="btn btn-primary btn-block">
-                    Leer Más
-                    </a>
-                </div>
+               <div class="container bg-dark">
+                  <h5 class="card-title text-center" style="color:whitesmoke">{{ Curso.nombre }}</h5>
+               </div>
+               <div class="container bg-light" style="padding-bottom: 10px;">
+                  <p class="card-text" style="min-height: 70px;">{{ Curso.descripcion|truncatewords:30 }}</p>
+                  <p class="card-text text-center">
+                     <strong>Escuela:</strong>
+                     <br>
+                     <span class="badge rounded-pill bg-primary">{{ Curso.escuela }}</span>  
+                  </p>
+                  <p class="card-text text-center">
+                     <strong>Categorías:</strong>
+                     <br>
+                     {% for categoria in Curso.categorias.all %}
+                     <span class="badge bg-info" title="{{ categoria.descripcion }}" >{{ categoria.nombre }}</span>  
+                     {% endfor %}
+                  </p>
+                  <div class="d-grid gap-2 text-center">
+                     <a href="{% url 'curso_detail' Curso.pk %}"
+                        class="btn btn-outline-primary btn-sm">
+                     Más Detalles
+                     </a>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    {% endfor %}
+         </div>
+      </div>
+      {% endfor %}
+   </div>
 </div>
+<br>    
 {% endblock %}
