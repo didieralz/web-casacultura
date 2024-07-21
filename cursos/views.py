@@ -51,16 +51,14 @@ def estudiante_list(request):
 
 @login_required(login_url="login")
 def matricular(request):
-
     if request.method == 'POST':
-        form = forms.MatricularEstudiante(request.POST,request.FILES)#no estoy seguro de necesitar request.FILES ya que mi form no tiene archivos
-        form.fields["estudiante"].queryset = Estudiante.objects.filter(usuario=request.user.id) #intentando que solo muestre los estudantes del usuario
+        form = forms.MatricularEstudiante(request.POST, user=request.user)
         if form.is_valid():
-            newMatricula = form.save(commit = False)
+            newMatricula = form.save(commit=False)
             newMatricula.save()
-            return redirect("estudiante_list") #hay que cambiar el redirect a la pagina de cursos matriculados
+            return redirect("estudiante_list") # Add a popup for successful enrollment if needed
     else:
-        form = forms.MatricularEstudiante()
+        form = forms.MatricularEstudiante(user=request.user)
 
-    context = {'form':form}
-    return render(request,'cursos/matricular.html',context)
+    context = {'form': form}
+    return render(request, 'cursos/matricular.html', context)

@@ -1,16 +1,43 @@
-<!-- http://127.0.0.1:8000/cursos/matricular/-->
 {% extends "base.html" %}
-{% block title %}Matricurlase{% endblock %}
+{% block title %}Matricúlate{% endblock %}
 {% block page_content %}
-<section>
-    <h1>Matricular cusos</h1>
-    <form class="form-control" action="{% url 'matricular' %}" method="post" enctype="multipart/form-data">
-        <!-- entre las llaves {} referencio la url del form como nombre_de_la_url -->
-        {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
-         {{form}} <!-- traigo el form desde el argumento context de la vista en views-->
-         <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-
+<section class="container mt-5">
+    <div class="container-fluid p-3 text-center">
+        <h1>Matricular cursos</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container-fluid h-100" style="background-color: whitesmoke;border-radius: 5px;">
+            <div class="container-fluid p-3 text-center p-3%"><h3>Pre matricula estudiante</h3></div>     
+            <form class="row g-3" action="{% url 'matricular' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3 text-center">
+                    <label for="{{ field.id_for_label }}" class="form-label" style="min-width: 80px;">{{ field.label }}:</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                    <div class="form-text">{{ field.help_text }}</div>
+                    {% endif %}
+                    {% if field.errors %}
+                    <div class="alert alert-danger">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="container-fluid text-center">
+                    <button class="btn btn-primary" type="submit">GUARDAR MATRICULA</button>
+                </div>
+            </form>
+        </div>
+    </div>
+        <div class="col-md-6">
+            <div class="container-fluid h-100" style="background-color: whitesmoke;border-radius: 5px;">
+            <div class="container-fluid p-3 text-center"><h3>Aviso Importante</h3></div> 
+            <p>Estimados participantes,</p>
+            <p>Queremos informarles que el proceso de pre-matrícula en nuestros cursos culturales no garantiza un cupo en los mismos. La pre-matrícula es solo un paso inicial para manifestar su interés en participar. Para asegurar su lugar en el curso, es necesario que cada matrícula sea legalizada de manera presencial en nuestra oficina</p>
+            <p>Agradecemos su comprensión y colaboración. ¡Esperamos verlos pronto en la “Casa de la Cultura”!</p>
+            <p>Atentamente, Casa de la Cultura</p>
+        </div>
+        </div>
+    </div>
 </section>
-
 {% endblock page_content %}

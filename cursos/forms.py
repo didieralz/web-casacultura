@@ -18,3 +18,9 @@ class MatricularEstudiante (forms.ModelForm):
     class Meta:
         model = models.Matricula
         fields = ['estudiante','Curso']
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super(MatricularEstudiante, self).__init__(*args, **kwargs)
+        if user is not None:
+            self.fields['estudiante'].queryset = models.Estudiante.objects.filter(usuario=user)
