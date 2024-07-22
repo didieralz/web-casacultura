@@ -77,35 +77,45 @@
 - [x] formulairo de nuevo estudiante debe tener selector de fecha [widget calendario para form](https://pythonassets.com/posts/date-field-with-calendar-widget-in-django-forms/)
 - [x] Revisar y  modificar modelo de matricula
 - [x] Generar formulario para matricula
+- [ ] Fromulario para editar estudiante
 - [ ] Generar alternativas del formulario de matricula que traigan el estudiante o el cruso fijo
 
 ## Mejorar diseño de paginas
+- [x] [home](pages/templates/pages/home.html)
+- [x] [curso index](cursos/templates/cursos/curso_index.html)
+- [ ] [curso details](cursos/templates/cursos/curso_detail.html)
+- [x] [Matricular](cursos/templates/cursos/matricular.html)
+- [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
+- [x] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 - [ ] [login](templates/registration/login.html)
 - [ ] [signup](templates/registration/signup.html)
-- [ ] [home](pages/templates/pages/home.html)
-- [ ] [curso details](cursos/templates/cursos/curso_detail.html)
-- [ ] [curso index](cursos/templates/cursos/curso_index.html)
-- [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
-- [ ] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 
 ## Estilizado Home:
 - [x] Agregar Nav bar a la plantilla par aque seiempre sea visible la opcion de home, log in y otras
-- [ ] Agregar carousel a home page
-- [ ] Agregar Mision y vision a home page
-- [ ] (opcional) Agregar carousel nuestro equipo con overviews de los profesores creados
+- [x] Agregar carousel a home page
+- [x] Agregar Mision y vision a home page
+- [ ] (opcional?) Agregar seccion nuestro equipo
 
 ## user management: 
 - [x] login 
 - [x] logout 
 - [x] cambio de contraseña 
 - [ ] pagina de detalles del usuario logeado
-  
+
+## listado de Estudiantes:
+- [x] Mejorar estilo visual
+- [x] Boton de Matricular estudiante
+- [ ] Boton de editar estudiante
+- [ ] Boton de eliminar estudiante (con alerta y confirmacion)
+- [ ] Filtro de estudiantes
+
 ## cursos matriculados
 - [ ] Consultar cursos matriculados por estudiante
 - [ ] Vista calendario de estudiante (requiere featur sesiones)
 
 ## sesiones agendadas
 - [ ] Formulario para agendar sesiones de clases
+- [ ] formulario para registrar asistencia a clases
 
 [^TutorialPortfolio]: https://realpython.com/get-started-with-django-1
 [^MarkdownGuide]: https://markdownguide.offshoot.io/extended-syntax/

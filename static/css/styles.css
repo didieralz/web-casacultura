@@ -6,3 +6,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+  }
