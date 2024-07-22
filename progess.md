@@ -33,9 +33,10 @@
 ## Paginas de cursos index y detalle
 - [x] Se mejora pagina [curso_index](cursos/templates/cursos/curso_index.html) para agregar filtro  y pequeñas correcciones de estilo
 - [x] Se agrega la funcion, vista y url necesaria para poder tener un boton en [Home](pages/templates/pages/home.html) que lleve al [curso_index](cursos/templates/cursos/curso_index.html)
-- [ ] [curso_index](cursos/templates/cursos/curso_index.html) debe mostrar las categorias
-- [ ] [curso_details](cursos/templates/cursos/curso_detail.html) mostrar detalles del curso
-- [ ] [curso_details](cursos/templates/cursos/curso_detail.html) boton para matricula
+- [x] [curso_index](cursos/templates/cursos/curso_index.html) debe mostrar las categorias
+- [ ] [curso_index](cursos/templates/cursos/curso_index.html) debe tener filtros de escuela y categoria
+- [x] [curso_details](cursos/templates/cursos/curso_detail.html) mostrar detalles del curso
+- [x] [curso_details](cursos/templates/cursos/curso_detail.html) boton para matricula
 
 ## Agregar imagenes
 - [x] modificar modelo de cursos para poder subir imagenes *https://realpython.com/get-started-with-django-1/#upload-images*
@@ -83,7 +84,7 @@
 ## Mejorar diseño de paginas
 - [x] [home](pages/templates/pages/home.html)
 - [x] [curso index](cursos/templates/cursos/curso_index.html)
-- [ ] [curso details](cursos/templates/cursos/curso_detail.html)
+- [x] [curso details](cursos/templates/cursos/curso_detail.html)
 - [x] [Matricular](cursos/templates/cursos/matricular.html)
 - [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
 - [x] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
