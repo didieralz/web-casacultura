@@ -4,11 +4,33 @@
 {% block title %}Login{% endblock title%}
 
 {% block page_content %}
-
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Log In</button>
-</form>
+<div class="card p-3" >
+  <h3 class="card-title text-center">Iniciar Sesión</h3>
+  <div class="container-fluid p-3">
+    <form method="post">
+      <div class="container-fluid p-3">
+        {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
+        {% for field in form %}
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="{{ field.id_for_label }}" class="form-label text-sm-center text-md-end" style="width: 100%;">{{ field.label }}:</label>
+            </div>
+            <div class="col-sm-6">
+                {{ field }}
+            </div>
+            {% if field.help_text %}
+            <div class="form-text">{{ field.help_text }}</div>
+            {% endif %}
+            {% if field.errors %}
+            <div class="alert alert-danger">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mt-auto text-center">
+      <button type="submit">Iniciar Sesión</button>
+    </div>
+    </form>
+  </div>
+</div>
 {% endblock page_content %}

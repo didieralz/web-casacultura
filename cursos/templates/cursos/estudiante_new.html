@@ -3,13 +3,49 @@
 {% block title %}titulo{% endblock %}
 {% block page_content %}
 <section>
-    <h1>contenido html</h1>
-    <form class="form-control" action="{% url 'estudiante_new' %}" method="post" enctype="multipart/form-data">
-        <!-- entre las llaves {} referencio la url del form como nombre_de_la_url -->
-        {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
-         {{form}} <!-- traigo el form desde el argumento context de la vista en views-->
-         <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
+    <h1 class="text-center">Registrar perfil de estudiante</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-control" action="{% url 'estudiante_new' %}" method="post" enctype="multipart/form-data">
+                <!-- entre las llaves {} referencio la url del form como nombre_de_la_url -->
+                <div class="container-fluid p-3">
+                    {% csrf_token %} <!-- crsf token porteje contra ataques crsf enfocados al form https://docs.djangoproject.com/en/5.0/howto/csrf/-->
+                    {% for field in form %}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="{{ field.id_for_label }}" class="form-label" style="min-width: 80px;">{{ field.label }}:</label>
+                        </div>
+                        <div class="col-md-8">
+                            {{ field }}
+                        </div>
+                        {% if field.help_text %}
+                        <div class="form-text">{{ field.help_text }}</div>
+                        {% endif %}
+                        {% if field.errors %}
+                        <div class="alert alert-danger">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-auto text-center">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100" style="width: 100%;">
+                <div class="container-fluid p-3">
+                    <h3 class="text-center">Aviso:</h3>
+                    <ul >
+                        <li >Un perfil de estudiante lo puede representar a usted o a un miembro de su nucleo familiar.</li>
+                        <li >Es necesario tener un perfil de estudiante creado para inscribirse a un curso.</li>
+                        <li >Puede crear perfiles de estudiante adicionales, esto le permitira inscribir a los miembros de su familia que por cualquier motivo no cuenten con su propio usuario.</li>
+                        <li >La informacion requerida para crear cada perfil de estudiante debe ser real y los administrativos de la casa de la cultura podran solicitarle documentacion que confirme los datos ingresados en caso de que lo consideren necesario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 

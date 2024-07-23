@@ -86,9 +86,9 @@
 - [x] [curso index](cursos/templates/cursos/curso_index.html)
 - [x] [curso details](cursos/templates/cursos/curso_detail.html)
 - [x] [Matricular](cursos/templates/cursos/matricular.html)
-- [ ] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
+- [x] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
 - [x] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
-- [ ] [login](templates/registration/login.html)
+- [x] [login](templates/registration/login.html)
 - [ ] [signup](templates/registration/signup.html)
 
 ## Estilizado Home:
