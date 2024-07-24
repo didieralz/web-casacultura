@@ -89,7 +89,7 @@
 - [x] [Estudiante_new](cursos/templates/cursos/estudiante_new.html)
 - [x] [Estudiantes_list](cursos/templates/cursos/Estudiante_list.html)
 - [x] [login](templates/registration/login.html)
-- [ ] [signup](templates/registration/signup.html)
+- [x] [signup](templates/registration/signup.html)
 
 ## Estilizado Home:
 - [x] Agregar Nav bar a la plantilla par aque seiempre sea visible la opcion de home, log in y otras
@@ -121,3 +121,4 @@
 [^TutorialPortfolio]: https://realpython.com/get-started-with-django-1
 [^MarkdownGuide]: https://markdownguide.offshoot.io/extended-syntax/
 [^LearnDJango]:https://learndjango.com/
+[^Login&logout]:(https://learndjango.com/tutorials/django-login-and-logout-tutorial)

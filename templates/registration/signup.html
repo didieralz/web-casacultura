@@ -4,12 +4,32 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block page_content %}
-<div class="container mt-5">
-    <h2>Sign Up</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </form>
+<div class="container">   
+    <div class="card p-3 w-50" >
+        <h2 class="card-title text-center">Registro de usuario</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="row">
+                <div class="d-flex">
+                    <label for="{{ field.id_for_label }}" class="form-label text-center" style="width: 100%;">{{ field.label }}:</label>
+                </div>
+                <div class="mt-auto text-center">
+                    {{ field }}
+                </div>
+                {% if field.help_text %}
+                <div class="form-text text-center">{{ field.help_text }}</div>
+                {% endif %}
+                {% if field.errors %}
+                <div class="alert alert-danger text-center">{{ field.errors }}</div>
+                {% endif %}
+                <hr class="mt-1 mb-1"></hr> 
+            </div>
+            {% endfor %}
+            <div class="mt-auto text-center p-3">
+                <button type="submit" class="btn btn-primary">Registrarme!</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

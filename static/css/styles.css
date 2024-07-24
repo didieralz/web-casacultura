@@ -11,3 +11,7 @@ body {
     --bs-tooltip-bg: var(--bd-violet-bg);
     --bs-tooltip-color: var(--bs-white);
   }
+
+.min-height-200 {
+    min-height: 200px;
+}
