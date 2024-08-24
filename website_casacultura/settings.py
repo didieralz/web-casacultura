@@ -14,6 +14,7 @@ login tutorial: https://learndjango.com/tutorials/django-login-and-logout-tutori
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,4 +141,17 @@ LOGIN_REDIRECT_URL = "home" #redirecciona despues del login
 LOGOUT_REDIRECT_URL = "home" #redirecciona despues del logout
 
 #DELETE AFTER EMAIL TESTS
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # esta linea es para testear el envio de email sin necesidad de configurar el SMTP
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # esta linea es para testear el envio de email sin necesidad de configurar el SMTP
+
+#Email Sender Config
+#Oculto la llave de email usando variables de ambiente en el OS para proteger mi usuario al subir a GitHub
+#https://stackoverflow.com/questions/4906977/how-can-i-access-environment-variables-in-python
+#Con este metodo se hace necesario crear las variables de ambiente en el sistema operativo par apoder enviar el correo
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('key_email_user')
+EMAIL_HOST_PASSWORD = os.environ.get('key_email_pass')
+DEFAULT_FROM_EMAIL = os.environ.get('key_email_user')

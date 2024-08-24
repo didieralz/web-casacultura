@@ -4,6 +4,9 @@ from django.shortcuts import render, redirect
 from cursos.models import Curso,Estudiante
 from django.contrib.auth.decorators import login_required #implmentarlogin required, en seting se debe poner login url
 from . import forms
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.conf import settings
  
 
 # Create your views here.
@@ -56,6 +59,19 @@ def matricular(request):
         if form.is_valid():
             newMatricula = form.save(commit=False)
             newMatricula.save()
+            # Extract form data
+            matricula_estudiante = request.POST.get('email')
+            matricula_curso = request.POST.get('name')
+            # Add other form fields as needed
+
+            # Send email
+            send_mail(
+                'Matriculación Exitosa',
+                f'Hola {request.user.username},\n\nGracias por matricularte. Aquí está tu información:\n\nNombre: {matricula_estudiante}\nCurso: {matricula_curso}',
+                settings.DEFAULT_FROM_EMAIL,
+                [request.user.email],
+                fail_silently=False,
+            )
             return redirect("estudiante_list") # Add a popup for successful enrollment if needed
     else:
         form = forms.MatricularEstudiante(user=request.user)
